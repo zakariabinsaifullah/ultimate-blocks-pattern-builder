@@ -1,0 +1,299 @@
+/* Library Wrapper */
+.ubpb-library-wrapper {
+    max-width: 1200px;
+    margin: 20px auto 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.ubpb-library-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    background: #fff;
+    padding: 20px 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.ubpb-library-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    color: #1d2327;
+}
+
+.ubpb-header-desc {
+    margin: 6px 0 0;
+    color: #646970;
+    font-size: 14px;
+}
+
+#ubpb-library-refresh .dashicons {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-right: 4px;
+}
+
+#ubpb-library-refresh.updating .dashicons {
+    animation: ubpb-spin 2s infinite linear;
+}
+
+@keyframes ubpb-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Controls Bar */
+.ubpb-library-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.ubpb-cat-filters {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.ubpb-cat-filters::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.ubpb-filter-btn {
+    background: #fff;
+    border: 1px solid #dcdcde;
+    border-radius: 40px;
+    padding: 6px 16px;
+    font-size: 13px;
+    color: #50575e;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.ubpb-filter-btn:hover {
+    border-color: #2271b1;
+    color: #2271b1;
+}
+
+.ubpb-filter-btn.active {
+    background: #2271b1;
+    border-color: #2271b1;
+    color: #fff;
+}
+
+.ubpb-search-box {
+    position: relative;
+    min-width: 250px;
+}
+
+.ubpb-search-box input {
+    width: 100%;
+    padding: 8px 12px 8px 36px;
+    border-radius: 6px;
+    border: 1px solid #dcdcde;
+    font-size: 14px;
+}
+
+.ubpb-search-box .dashicons {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a7aaad;
+}
+
+/* Grid */
+.ubpb-patterns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.ubpb-pattern-card {
+    background: #fff;
+    border: 1px solid #e2e4e7;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.ubpb-pattern-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15);
+    border-color: #cdcfd1;
+}
+
+.ubpb-card-thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    /* Or adjust based on your needs */
+    background: #f0f0f1;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.ubpb-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* or contain, depending on pattern thumbs */
+    object-position: top center;
+    transition: transform 0.3s;
+}
+
+.ubpb-pattern-card:hover .ubpb-card-thumb img {
+    transform: scale(1.05);
+    /* subtle zoom on hover */
+}
+
+.ubpb-card-body {
+    padding: 16px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ubpb-card-meta {
+    margin-bottom: 8px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #646970;
+    font-weight: 600;
+}
+
+.ubpb-card-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 16px;
+    color: #2c3338;
+}
+
+.ubpb-card-actions {
+    margin-top: auto;
+}
+
+.ubpb-add-btn {
+    width: 100%;
+    justify-content: center;
+    border-radius: 6px !important;
+    padding: 6px 0 !important;
+    font-weight: 600 !important;
+}
+
+/* Pagination */
+.ubpb-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 40px 0;
+}
+
+.ubpb-page-btn {
+    background: #fff;
+    border: 1px solid #dcdcde;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    color: #50575e;
+    transition: all 0.2s;
+}
+
+.ubpb-page-btn:hover:not(:disabled) {
+    border-color: #2271b1;
+    color: #2271b1;
+}
+
+.ubpb-page-btn.active {
+    background: #2271b1;
+    border-color: #2271b1;
+    color: #fff;
+}
+
+.ubpb-page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #f6f7f7;
+}
+
+/* Loading & Empty States */
+.ubpb-loading-state,
+.ubpb-empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 16px;
+    color: #646970;
+}
+
+.ubpb-loading-state .spinner {
+    float: none;
+    margin: -2px 8px 0 0;
+}
+
+/* Pro Badge & Button */
+.ubpb-pro-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #111;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    z-index: 10;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ubpb-pro-btn {
+    width: 100%;
+    justify-content: center;
+    border-radius: 6px !important;
+    padding: 6px 0 !important;
+    font-weight: 600 !important;
+    background: #fff !important;
+    border: 1px solid #111 !important;
+    color: #111 !important;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s !important;
+    text-decoration: none;
+}
+
+.ubpb-pro-btn .dashicons {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.ubpb-pro-btn:hover {
+    background: #111 !important;
+    color: #fff !important;
+}
